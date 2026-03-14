@@ -26,6 +26,8 @@ Gobuster discovered the following directories:
 /images  
 /bank-transfer
 
+[![Alt text for the image](/step_1)
+
 ---
 
 ## Step 2: Visiting the Discovered Directory
