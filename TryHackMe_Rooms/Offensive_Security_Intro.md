@@ -26,7 +26,7 @@ Gobuster discovered the following directories:
 /images  
 /bank-transfer
 
-[![Alt text for the image](/Screenshots/step_1.png)
+![Alt text for the image](/Screenshots/step_1.png)
 
 ---
 
@@ -38,7 +38,8 @@ http://fakebank.thm/bank-transfer
 
 This page contains a bank transfer form that allows users to send money.
 
-(Screenshot here)
+![Alt text for the image](/Screenshots/step_2.png)
+![Alt text for the image](/Screenshots/step_3.png)
 
 ---
 
@@ -52,7 +53,7 @@ Amount: Any value
 
 Click **Send Money**.
 
-(Screenshot here)
+![Alt text for the image](/Screenshots/step_4.png)
 
 ---
 
@@ -65,6 +66,8 @@ http://fakebank.thm
 Refresh the page a few times and you will see your account balance updated.
 
 This confirms the transfer was successful.
+
+![Alt text for the image](/Screenshots/step_5.png)
 
 ---
 
