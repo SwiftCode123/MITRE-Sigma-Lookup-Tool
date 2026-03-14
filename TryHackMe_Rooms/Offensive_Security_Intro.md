@@ -26,7 +26,7 @@ Gobuster discovered the following directories:
 /images  
 /bank-transfer
 
-[![Alt text for the image](/Screenshots/Offensive_Security/step_1)
+[![Alt text for the image](/Screenshots/step_1.png)
 
 ---
 
