@@ -54,8 +54,7 @@ Incident Response phases:
 3. **Containment, Eradication, Recovery (CER)**
 4. **Post-Incident Activity**
 
-![Alt text](Screenshots/PDA_CER.png)
-
+![Alt text for the image](/Screenshots/PDA_CER.png)
 ---
 
 ## Step 4: Malware Analysis
