@@ -34,7 +34,7 @@ A **MAC Address** is a unique hardware identifier on a device's Network Interfac
 
 Here, we can see if the switch is broken (Single Point of Failure), everything stops working
 
-![Alt text for the image](/Screenshots/star_top).png)
+![Alt text for the image](/Screenshots/star_top.png)
 
 **Bus Topology**
 - Devices share a single communication line
