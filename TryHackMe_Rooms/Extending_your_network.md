@@ -36,6 +36,15 @@ This room covers technologies for extending and securing networks, including **p
 - Benefits: privacy, security, remote network access  
 - Technologies: PPTP, IPSec
 
+## LAB
+Step 1: Properly Configure the firewall rule with Source IP address of `192.51.100.34` and destination IP address of `203.0.110.1` on port 80 and the action would be to DROP aka block the connection
+
+![Alt text for the image](/Screenshots/firewall_step2.png)
+
+Step 2: Add the rule and activate the rule and retrieve the flag
+
+![Alt text for the image](/Screenshots/firewall_step3.png)
+
 ---
 
 ## Key Learning Points
