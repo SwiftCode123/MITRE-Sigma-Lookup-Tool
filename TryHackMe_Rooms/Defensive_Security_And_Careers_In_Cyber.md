@@ -86,7 +86,12 @@ Functions:
 
 Challenge: analysts must investigate **true positives vs false positives**.
 
-**LAB**
+## LAB
+
+![Alt text for the image](/Screenshots/SOC_step1.png)
+![Alt text for the image](/Screenshots/SOC_step2.png)
+![Alt text for the image](/Screenshots/SOC_step3.png)
+![Alt text for the image](/Screenshots/SOC_step4.png)
 
 ---
 
