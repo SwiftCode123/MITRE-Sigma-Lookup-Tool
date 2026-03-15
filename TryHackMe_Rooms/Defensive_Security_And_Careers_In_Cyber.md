@@ -109,3 +109,4 @@ Step 4: We got permission to block this specific IP address and achieved the fla
 * DFIR investigates incidents and supports recovery.
 * Malware analysis reveals how malicious software works.
 * SIEM tools help detect suspicious activity through log analysis.
+* Basic idea of how SOC analysts work with detecting, analyzing, escalating, blocking and then documentation
