@@ -32,15 +32,27 @@ A **MAC Address** is a unique hardware identifier on a device's Network Interfac
 - **Pros:** scalable, easy to add new devices  
 - **Cons:** central switch failure can take down the network, more expensive
 
+Here, we can see if the switch is broken (Single Point of Failure), everything stops working
+
+![Alt text for the image](/Screenshots/star_top).png)
+
 **Bus Topology**
 - Devices share a single communication line
 - **Pros:** simple and cost-efficient  
 - **Cons:** single point of failure, can become slow with heavy traffic
 
+Here, we can see if that the network is overwhelemed, the traffic can add up and slow the network down
+
+![Alt text for the image](/Screenshots/bus_top.png)
+
 **Ring Topology**
 - Devices form a circular path for data
 - **Pros:** requires less cabling, predictable data path  
 - **Cons:** slower if multiple devices must be visited, prone to bottlenecks
+
+Here, we can see that there can be bottlenecks and also if one area is cut/broken, the network is unable to send information around. Furthermore, it has to visit every device before reaching the intended device.
+
+![Alt text for the image](/Screenshots/ring_top.png)
 
 ---
 
