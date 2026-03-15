@@ -54,7 +54,7 @@ Incident Response phases:
 3. **Containment, Eradication, Recovery (CER)**
 4. **Post-Incident Activity**
 
-![Alt text](Screenshots/PDA_CER)
+![Alt text](Screenshots/PDA_CER.png)
 
 ---
 
