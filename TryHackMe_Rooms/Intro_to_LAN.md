@@ -25,21 +25,40 @@ A **MAC Address** is a unique hardware identifier on a device's Network Interfac
 ---
 
 ## Step 3: LAN Topologies
-**Network topology** describes how devices are connected physically.
+**Network topology** describes how devices are physically connected.
 
-- **Star topology:** devices connect to a central switch (most common)  
-- **Bus topology:** devices share a single communication line  
-- **Ring topology:** devices form a circular path for data
+**Star Topology**
+- Devices connect to a central switch
+- **Pros:** scalable, easy to add new devices  
+- **Cons:** central switch failure can take down the network, more expensive
+
+**Bus Topology**
+- Devices share a single communication line
+- **Pros:** simple and cost-efficient  
+- **Cons:** single point of failure, can become slow with heavy traffic
+
+**Ring Topology**
+- Devices form a circular path for data
+- **Pros:** requires less cabling, predictable data path  
+- **Cons:** slower if multiple devices must be visited, prone to bottlenecks
 
 ---
 
 ## Step 4: Networking Devices
-- **Switch:** connects devices within the same LAN using Ethernet  
-- **Router:** connects different networks and routes traffic between them
+**Switch**
+- Connects devices within the same LAN using Ethernet
+- **Pros:** efficient traffic management within LAN  
+- **Cons:** cannot connect different networks by itself
+
+**Router**
+- Connects different networks and routes traffic between them
+- **Pros:** enables Internet connectivity and subnet routing  
+- **Cons:** configuration can be complex, single failure can disrupt traffic
 
 ---
 
 ## Key Learning Points
 - IP addresses identify devices on a network.  
 - MAC addresses uniquely identify hardware.  
-- LAN topologies and devices determine how communication flows efficiently.
+- LAN topologies and devices determine how communication flows efficiently.  
+- Understanding pros and cons of topologies helps design resilient networks.
