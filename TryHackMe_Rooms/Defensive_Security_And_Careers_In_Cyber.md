@@ -88,9 +88,16 @@ Challenge: analysts must investigate **true positives vs false positives**.
 
 ## LAB
 
+Step 1: I identified that there were multiple logs here. However, one stuck out where it said "Unauthorized connection" by the IP address 143.110.250.149. The other logs seemed like normal activity or false positives.
 ![Alt text for the image](/Screenshots/SOC_step1.png)
+
+Step 2: This involved scanning the IP address and making sure it was actual malicious and I found out it was malicious by typing in the IP address 143.110.250.149
 ![Alt text for the image](/Screenshots/SOC_step2.png)
+
+Step 3: I needed to escalate this situation to the proper staff member which was the SOC team lead 
 ![Alt text for the image](/Screenshots/SOC_step3.png)
+
+Step 4: We got permission to block this specific IP address and achieved the flag
 ![Alt text for the image](/Screenshots/SOC_step4.png)
 
 ---
