@@ -39,16 +39,16 @@ The **Internet** is the largest network in the world, made up of many smaller ne
 ## LAB
 - Here, we can spoof the MAC address of the other device and pretend to be them
 Step 1: See what works
-![Screenshot](Screenshots/Network_step1.png)
-![Screenshot](Screenshots/Network_step2.png)
+![Alt text for the image](/Screenshots/Network_step1.png)
+![Alt text for the image](/Screenshots/Network_step2.png)
 
 Step 2: We can change the MAC address to the other device and send the data to get the flag
 
-![Screenshot](Screenshots/Network_step3.png)
+![Alt text for the image](/Screenshots/Network_step3.png)
 
 Basic Ping command such as where we can ping Google's public DNS resolver via the command 
 `ping -c 4 8.8.8.8 ` which means send 4 count of packets to the 8.8.8.8
-![Screenshot](Screenshots/ping.png)
+![Alt text for the image](/Screenshots/ping.png)
 
 ---
 
