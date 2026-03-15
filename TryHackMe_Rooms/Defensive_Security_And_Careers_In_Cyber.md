@@ -94,7 +94,3 @@ Challenge: analysts must investigate **true positives vs false positives**.
 * DFIR investigates incidents and supports recovery.
 * Malware analysis reveals how malicious software works.
 * SIEM tools help detect suspicious activity through log analysis.
-
----
-
-If you want, I can also show you a **super clean cybersecurity portfolio format most TryHackMe people use on GitHub** (with badges, icons, and screenshots sections). It’ll make your repo look **10x more professional for internships.**
