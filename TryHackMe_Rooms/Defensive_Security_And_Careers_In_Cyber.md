@@ -7,7 +7,7 @@ The goal was to understand how security teams detect, analyze, and respond to cy
 
 ---
 
-## Step 1: Security Operations Center (SOC)
+## Security Operations Center (SOC)
 
 A **SOC** monitors networks and systems to detect malicious activity and protect organizational infrastructure.
 
@@ -22,7 +22,7 @@ Key responsibilities:
 
 ---
 
-## Step 2: Threat Intelligence
+## Threat Intelligence
 
 **Threat Intelligence** focuses on gathering information about attackers to improve defense.
 
@@ -37,7 +37,7 @@ Goal: **identify threat actors and predict future attacks**.
 
 ---
 
-## Step 3: Digital Forensics & Incident Response (DFIR)
+## Digital Forensics & Incident Response (DFIR)
 
 **DFIR** focuses on investigating digital crimes and responding to security incidents.
 
@@ -57,7 +57,7 @@ Incident Response phases:
 ![Alt text for the image](/Screenshots/PDA_CER.png)
 ---
 
-## Step 4: Malware Analysis
+## Malware Analysis
 
 Malware analysis studies malicious software to understand its behavior.
 
@@ -74,7 +74,7 @@ Analysis methods:
 
 ---
 
-## Step 5: SIEM
+## SIEM
 
 A **SIEM (Security Information and Event Management)** system collects and analyzes logs from multiple sources.
 
@@ -85,6 +85,8 @@ Functions:
 * Alert generation for suspicious activity
 
 Challenge: analysts must investigate **true positives vs false positives**.
+
+**LAB**
 
 ---
 
