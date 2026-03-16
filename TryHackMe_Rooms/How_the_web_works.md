@@ -74,10 +74,21 @@ Websites can serve two types of content:
 ---
 ## LAB
 
-Step 1: Here, we needed to get a CNAME record and I selected CNAME and typed in the name `shop` which gave us shop.website.thm retrieving the flag
+Step 1: Here, we needed to get a CNAME record and I selected CNAME and typed in the name `shop` which gave us shop.website.thm retrieving the flag. Note that the CNAME record points one domain to another domain by definition.
 
 ![Alt text for the image](/Screenshots/CNAME.png)
 
+Step 2: I needed to select the TXT record which holds any TXT data such as verification/security related data of website.thm which I received the flag
+
+![Alt text for the image](/Screenshots/TXT.png)
+
+Step 3: I recieved the MX record which holds the mail servers responsible for sending mails on the behalf of the domain for website.thm
+
+![Alt text for the image](/Screenshots/MX.png)
+
+Step 4: I retrieved the A record which holds the hostnames translated to IPv4 addresses
+
+![Alt text for the image](/Screenshots/A.png)
 
 ### Key Learning Points
 
