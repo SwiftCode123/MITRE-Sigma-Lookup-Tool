@@ -72,7 +72,7 @@ Websites can serve two types of content:
 * Often requires database queries
 
 ---
-**LAB**
+## LAB
 
 Step 1: Here, we needed to get a CNAME record and I selected CNAME and typed in the name `shop` which gave us shop.website.thm retrieving the flag
 
