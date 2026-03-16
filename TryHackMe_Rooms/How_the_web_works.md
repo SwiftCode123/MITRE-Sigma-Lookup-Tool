@@ -12,8 +12,8 @@ DNS translates human-readable domain names into IP addresses so computers can lo
 
 Domain structure includes:
 
-* **Top Level Domain (TLD)** – The right-most part of a domain (e.g., `.com`, `.org`)
-* **Second Level Domain (SLD)** – The main domain name (e.g., `tryhackme`)
+* **Top Level Domain (TLD)** – The right-most part of a domain (`.com`, `.org`)
+* **Second Level Domain (SLD)** – The main domain name (`tryhackme`)
 * **Subdomain** – Additional prefixes like `admin.tryhackme.com`
 
 Common DNS record types:
@@ -72,6 +72,12 @@ Websites can serve two types of content:
 * Often requires database queries
 
 ---
+**LAB**
+
+Step 1: Here, we needed to get a CNAME record and I selected CNAME and typed in the name `shop` which gave us shop.website.thm retrieving the flag
+
+![Alt text for the image](/Screenshots/CNAME.png)
+
 
 ### Key Learning Points
 
