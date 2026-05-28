@@ -68,6 +68,16 @@ Attackers can host malware on a WebDAV server so the victim’s computer treats 
 
 <img width="6412" height="10076" alt="mitre_ID" src="https://github.com/user-attachments/assets/e95e816f-8da4-4d50-b89d-1f8c3edd9075" />
 
+### Searching by Technique name
+
+Instead of searching by Technique ID, we can also search by technique name. I chose `Masquerading (T1036)` here hackers disguise malicious files or activity as something completely harmless (like renaming a piece of malware to svchost.exe so it looks like a built-in Windows service). The mitigations and sigma rules are outputted as well and describe the ways to defend and detect these attacks
+
+For example, we can see that one mitigation technique is `Code Signing (M1045) where we ensure files have a valid digital signature so hackers can't easily fake standard system utilities
+
+The sigma output shows us ways to detect this attack in these rules `proc_creation_win_renamed_powershell.yml` and `proc_creation_win_renamed_psexec.yml` monitor Windows event logs to see if a process has been renamed to hide its identity
+
+<img width="5367" height="16384" alt="mitre_name" src="https://github.com/user-attachments/assets/e3ebc8cc-aefc-4253-b852-c2c4aa461d4d" />
+
 ## Post Project Ideas
 
 - Alias the program to create a custom command that is accessible anywhere
