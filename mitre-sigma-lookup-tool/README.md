@@ -54,6 +54,9 @@ echo -e '#!/usr/bin/env python3\nprint("hello world")' > lookup.py
 ```
 
 ## Example Usage
+### Searching by Technique ID
+
+<img width="6412" height="10076" alt="mitre_ID" src="https://github.com/user-attachments/assets/e95e816f-8da4-4d50-b89d-1f8c3edd9075" />
 
 ## Post Project Ideas
 
