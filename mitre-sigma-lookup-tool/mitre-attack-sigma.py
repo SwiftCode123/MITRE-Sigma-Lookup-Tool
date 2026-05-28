@@ -23,12 +23,15 @@ ATTACK_ID_RE = re.compile(r"T\d{4}(?:\.\d{3})?", re.IGNORECASE)
 # (?:\.\d{3})?  -> Matches "." followed by 3 digits or nothing (.000 to .999), opt.
 # re.IGNORECASE -> Makes the whole thing case insensative
 
+# Takes messy user input and extracts the clean ID 
+# For example, turning technique t1105! to T1105
 def normalize_attack_id(attack_id_raw: str):
     if not attack_id_raw:
         return None
     m = ATTACK_ID_RE.search(attack_id_raw)
     return m.group(0).upper() if m else None
 
+# extracts the ID out of the MITRE data block
 def get_attack_id(technique, query):
     ext = technique.get("external_references", [])
     if ext:
@@ -46,6 +49,7 @@ def get_attack_id(technique, query):
 
     return attack_id
 
+# Verifies if the folder containing the detection rules exists on your computer
 def get_sigma_root(sigma):
     sigma_root = Path(sigma)
 
