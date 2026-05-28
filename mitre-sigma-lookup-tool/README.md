@@ -53,6 +53,8 @@ git clone https://github.com/SigmaHQ/sigma.git
 echo -e '#!/usr/bin/env python3\nprint("hello world")' > lookup.py
 ```
 
+### Example Usage
+
 ## Post Project Ideas
 
 - Alias the program to create a custom command that is accessible anywhere
