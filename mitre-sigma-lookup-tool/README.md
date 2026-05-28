@@ -2,15 +2,13 @@
 
 CLI tool to lookup the MITRE mitigations and the Sigma detections for any technique
 ## Project Background
-This project is intended to be a starting point for anyone beginning a journey in cybersecurity. This project is small in scope and only requires basic skills, but touches on critical concepts used in cybersecurity operations, threat hunting, and incident response.
 
 **MITRE ATT&CK** is a globally accessible knowledge base of adversary tactics and techniques. Security teams use it to understand attacker behaviors, plan defenses, and map observed activity in their networks.
 
 **Sigma** is a generic and open signature format for SIEM (Security Information and Event Management) systems. It allows security teams to define detection rules once and convert them to different SIEM formats. By linking ATT&CK techniques to Sigma rules, analysts can quickly translate threat intelligence into actionable detection logic.
 
-Through this project, you will interact with ATT&CK data, extract useful information, and gain hands-on exposure to practical cybersecurity workflows while developing your Python and Linux skills.
+Through this project, I will interact with ATT&CK data, extract useful information, and gain hands-on exposure to practical cybersecurity workflows while developing my Python and Linux skills.
 
-This project will also include suggestions to improve, customize, and expand its features. After completing the project, consider implementing one or more of these suggestions for further learning and to make this project really standout on a resume.
 ## Project Specifications
 
 Input: an ATT&CK technique ID (`T1564`) or technique name.
@@ -19,15 +17,6 @@ Output:
 	- Basic technique info (name, description)
 	- ATT&CK mitigations related to that technique
 	- Sigma rules that mention the technique ID
-
-### Prerequisites
-Beginner Python skills
-
-Basic Linux skills, including familiarity with a command line text editor (e.g. `vim`) 
-
-Basic Git/GitHub skills
-
-Basic understanding of MITRE ATT&CK and Sigma, like their role and usefulness in cybersecurity
 
 ### Dependencies
 Python 3.9+
@@ -128,5 +117,3 @@ echo -e '#!/usr/bin/env python3\nprint("hello world")' > lookup.py
 	- MITRE Caldera - Attack platform for launching TTPs in MITRE ATT&CK
 	- Metasploit - Tool for emulating attacker’s TTPs
 	- Splunk - Open-source SIEM (could implement Sigma rules directly)
-
-Implement all of these well and you likely have a project comparable to enterprise tools.
