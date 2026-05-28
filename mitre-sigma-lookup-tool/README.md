@@ -53,52 +53,6 @@ git clone https://github.com/SigmaHQ/sigma.git
 echo -e '#!/usr/bin/env python3\nprint("hello world")' > lookup.py
 ```
 
-## STAGE 1 - Libraries and to do list
-- [ ] Import all the necessary libraries and components
-	- [ ] `argparse, re, sys, yaml, json`
-	- [ ] `Path from pathlib`
-	- [ ] `Console from rich.console`
-	- [ ] `Table from rich.table`
-	- [ ] `Markdown from rich.mardown`
-	- [ ] `MitreAttackData from mitreattack.stix20`
-- [ ] Outline the tasks to complete in comments 
-- [ ] Define `main()` as “hello world” program
-- [ ] Use Console to make hello world green
-- [ ] Setup `__name__`
-## Stage 2 - Argument parsing & loading MITRE
-- [ ] Define a function to parse the following arguments using `argparse`
-	- [ ] `-h` and `--help` with description of program
-	- [ ] `--stix` for path to enterprise STIX JSON bundle (default `enterprise-attack.json`)
-	- [ ] `--sigma` for path to local Sigma repo (default `sigma`)
-- [ ] Define a function to load the MITRE STIX file with `MitreAttackData()`
-- [ ] Add both functions to `main()` and add descriptive console outputs.
-## Stage 3 - Searching MITRE for the technique
-- [ ] Define a regex to find all versions of Attack Id (with and without trailing decimal)
-- [ ] Define a function put put all Attack Ids in a standard form
-- [ ] Define a function to find the MITRE technique for any query
-	- [ ] First look for a technique, interpreting the query as an Attack ID
-	- [ ] Then as a technique name
-	- [ ] Then as a portion of the technique’s description
-- [ ] Define a function to print the technique’s name and description.
-- [ ] Add searching and printing functions to `main()` and add descriptive console outputs.
-## Stage 4 - Getting the mitigations
-- [ ] Define a function to get the Mitigations for a given technique
-	- [ ] First utilize `get_mitigations_mitigating_technique()`
-	- [ ] If that fails, try `get_all_techniques_mitigated_by_all_mitigations()`
-- [ ] Define a function to print the mitigations in a table
-- [ ] Add searching and printing functions to `main()` and add descriptive console outputs.
-## Stage 5 - Searching Sigma for the detections
-- [ ] Define a function to get an attack id (from either the technique or the query)
-- [ ] Define a function to get our sigma root as a path
-- [ ] Define a function to scan sigma for the given technique attack id
-	- [ ] Check each file in our sigma repo
-		- [ ] Skip directories
-		- [ ] Read the file
-		- [ ] Check it contains the attack id
-		- [ ] Extract the content depending on the file type (yml vs json)
-	- [ ] Return an object with all the files, titles, and tags
-- [ ] Define a function that prints the found sigma rules in a table
-- [ ] Add the functions to `main()` and add descriptive console outputs.
 ## Post Project Ideas
 
 - Alias the program to create a custom command that is accessible anywhere
