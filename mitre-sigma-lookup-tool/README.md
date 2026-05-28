@@ -96,3 +96,7 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 	- MITRE Caldera - Attack platform for launching TTPs in MITRE ATT&CK
 	- Metasploit - Tool for emulating attacker’s TTPs
 	- Splunk - Open-source SIEM (could implement Sigma rules directly)
+
+ ## Post Project Idea #1: Alias
+I decided to add this improvement as the first one. Creating an alias is very helpful instead of typing out long names in the terminal
+
