@@ -97,6 +97,8 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 	- Metasploit - Tool for emulating attacker’s TTPs
 	- Splunk - Open-source SIEM (could implement Sigma rules directly)
 
- ## Post Project Idea #1: Alias
-I decided to add this improvement as the first one. Creating an alias is very helpful instead of typing out long names in the terminal
+ ## Post Project Implmentation #1: Alias
+- I decided to add this improvement as the first one. Creating an alias is very helpful instead of typing out long commands in the terminal
+	- To make it a standalone command, we need to give the file execute permissions. Unix 		systems require execute permissions before a script can be run directly from the terminal
+<img width="1556" height="752" alt="chmodx" src="https://github.com/user-attachments/assets/f2ac5aca-a8a7-469a-8b1e-8932f1712b67" />
 
