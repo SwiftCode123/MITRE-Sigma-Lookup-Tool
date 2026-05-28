@@ -100,5 +100,5 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
  ## Post Project Implmentation #1: Alias
 - I decided to add this improvement as the first one. Creating an alias is very helpful instead of typing out long commands in the terminal
 	- To make it a standalone command, we need to give the file execute permissions. Unix 		systems require execute permissions before a script can be run directly from the terminal
-<img width="1228" height="700" alt="image" src="https://github.com/user-attachments/assets/da727b22-4e38-42d5-98ab-fcd79c5ff1f6" />
+<img width="303" height="169" alt="image" src="https://github.com/user-attachments/assets/8a553f86-bc4b-40a7-93ec-d8a91e868781" />
 
