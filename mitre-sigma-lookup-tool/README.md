@@ -25,7 +25,7 @@ A Linux environment with Internet access
 
 *Note this project can be done in other systems, however all instructions are intended for Linux and may need to be modified for other environments.*
 	
-## STAGE 0 - Setup Environment
+## Setup Environment
 
 The setup process has been automated with `setup.sh`, or you can follow these steps:
 
