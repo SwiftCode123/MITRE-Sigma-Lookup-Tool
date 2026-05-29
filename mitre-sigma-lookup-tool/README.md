@@ -99,13 +99,27 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 
  ## Post Project Implmentation #1: Alias
 - I decided to add this improvement as the first one. Creating an alias is very helpful instead of typing out long commands in the terminal
-	- To make it a standalone command, we need to give the file execute permissions. This is because Unix systems require execute permissions before a script 	  can be run directly from the terminal. This change was made via `chmod +x mitre-attack-sigma.py`
- 	- Next, I opened my configuration file via `nano ~/.zshrc` and added my alias starting          with the command `alias mitre="~/path/to/your/folder/mitre-attack-sigma.py"`. Since I am in a 	virtual environment and my 		script relies on packages such as `rich` and `yaml` inside my `venv`, a standard alias 		might fail if the virtual environment isn't active.
-  - I fixed this by pointing the alias 		directly to the Python interpreter inside my venv via `"~/path/to/your/folder/venv/bin/python3"`. The full alias is `alias mitre="~/path/to/your/folder/venv/bin/python3 ~/path/to/your/folder/mitre-attack-sigma.py"`.
+	- To make it a standalone command, we need to give the file execute permissions. This is because Unix systems require execute permissions before a script 	  can be run directly from the terminal
+ ```bash
+chmod +x mitre-attack-sigma.py
+```
+ - Next, I opened my configuration file via `nano ~/.zshrc` and added my alias
+```bash
+alias mitre="~/path/to/your/folder/mitre-attack-sigma.py"
+```
+  Since I am in a 	virtual environment and my 		script relies on packages such as `rich` and `yaml` inside my `venv`, a standard alias 		might fail if the virtual environment isn't active.
+  - I fixed this by pointing the alias 		directly to the Python interpreter inside my venv 
+```bash
+alias mitre="~/path/to/your/folder/venv/bin/python3"
+```
+- The full alias
+```bash
+alias mitre="~/path/to/your/folder/venv/bin/python3 ~/path/to/your/folder/mitre-attack-sigma.py"
+```
   - Then, I saved it via `source ~/.zshrc` and 	tested it with `mitre Masquerading`. Below are the results and it worked. As you can see instead of having to `cd` inside folders and provide a long command, I can just type `mitre` which is the alias and it works the same way as it did before. Note that I also do not need to be inside the `venv` folder and can deactivate it and it still works
 <img width="5192" height="6508" alt="image" src="https://github.com/user-attachments/assets/afff9932-114d-4515-b1d2-c543568f4c9d" />
 
- ## Post Project Implmentation #1: Handle outputting to files
+ ## Post Project Implmentation #2: Handle outputting to files
  - For this implementation, it was very minimal
  	- The original code had `console = Console()` and I changed it to `console = Console(record=True)`. This allows the Console class to save a copy of all its printed and logged data and allows us to use Rich's terminal export feature
   - Then, I added this line to tell `argparse` to be able to accept a new, optional argument for the output file path
@@ -125,6 +139,6 @@ if args.output:
 - We can see below that I was able to use the `-o credentials_from_password_stores.txt` parameter and then at the bottom it printed `Report successfully saved to: credentials_from_password_stores.txt`
 <img width="5192" height="4948" alt="image" src="https://github.com/user-attachments/assets/45a0bf3c-bc0f-4593-a600-a9258a465237" />
 
-The `The credentials_from_password_stores.txt` file has been successfully stored on my local computer
+- The `The credentials_from_password_stores.txt` file has been successfully stored on my local computer
 
 <img width="1144" height="899" alt="image" src="https://github.com/user-attachments/assets/895fb1c7-28ca-4351-86dc-f61cbb99b61c" />
