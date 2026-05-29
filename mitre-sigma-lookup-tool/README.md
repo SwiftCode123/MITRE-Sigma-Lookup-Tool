@@ -87,6 +87,8 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 - Handle bulk searches and outputs
 	- [Post Project Implementation #3](post-project-implementation-03-bulk-search-output/README.md) 
 - Integrate another open-source library mapped to MITRE ATT&CK
+	- [Post Project Implementation #4](post-project-implementation-04-atomic-attack-lib/README.md) 
+
 - Use Django to create a web interface
 	- Search bar for searching, rather than command line argument
 	- Host static site via cloud technology or physical server
