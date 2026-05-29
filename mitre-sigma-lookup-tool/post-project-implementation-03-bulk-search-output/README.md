@@ -112,6 +112,7 @@ Lastly, I tested it the `-o` option with `mitre T1057,T1033 -o incident_alpha_re
 <img width="5768" height="8428" alt="image" src="https://github.com/user-attachments/assets/539b1b25-7c08-4069-8d82-fb4689d8b88d" />
 
 Below, it created the folder structure that I inputted
+
 <img width="371" height="47" alt="image" src="https://github.com/user-attachments/assets/3876bc6f-5f2f-400d-b2fe-00d87b738939" />
 
 
