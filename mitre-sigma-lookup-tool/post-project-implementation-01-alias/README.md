@@ -8,7 +8,7 @@ chmod +x mitre-attack-sigma.py
 ```bash
 alias mitre="~/path/to/your/folder/mitre-attack-sigma.py"
 ```
-  Since I am in a 	virtual environment and my 		script relies on packages such as `rich` and `yaml` inside my `venv`, a standard alias 		might fail if the virtual environment isn't active.
+  Since I am in a 	virtual environment and my 		script relies on packages such as `rich` and `yaml` inside my `venv`, a standard alias 		might fail if the virtual environment isn't active
   - I fixed this by pointing the alias 		directly to the Python interpreter inside my venv 
 ```bash
 alias mitre="~/path/to/your/folder/venv/bin/python3"
