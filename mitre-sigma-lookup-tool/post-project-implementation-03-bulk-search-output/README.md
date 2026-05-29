@@ -17,8 +17,6 @@ parser.add_argument("-o", "--output-dir", default="reports", help="Directory fol
 ```
 Then, I made a function that generates a single report for every technique instead of having one giant report that could result it in being messy and hard to read
 
-You can see that I also added a `console.clear()` and this was because since we have `console = Console(record=True)` which logs everything and so running multiple techniques back to back would cause the reports to pile up into one big report and the techniques would be mixed together and so clearing the cache makes sure that each technique gets it own report
-
 ```python
 def generate_single_report(mitre, sigma_root, query, output_dir=None):
     console.print(f"\n[bold blue]=========================================[/bold blue]")
@@ -28,8 +26,6 @@ def generate_single_report(mitre, sigma_root, query, output_dir=None):
     if not tech:
         console.print(f"[red]Technique '{query}' not found. Skipping.[/red]")
         return
-
-    console.clear() 
     
     print_technique_summary(tech)
     
@@ -95,3 +91,27 @@ def main():
 
     console.print("\n[bold green] All techniques processed successfully![/bold green]")
 ```
+## Example Usage
+### Searching with Multiple Techniques (Comma Separated)
+<img width="6872" height="11124" alt="image" src="https://github.com/user-attachments/assets/a7d7d3b6-45db-4644-b6ba-8f5bdaf79288" />
+
+You can see that I searched with the `T1057`, `T1016`, `T1033` techniques all that once and it was able to output it to the console and save it to my folder named `reports` since I did not specify a folder name
+
+<img width="363" height="58" alt="image" src="https://github.com/user-attachments/assets/f31f2a94-7a94-4b82-b5cc-a5e5658be333" />
+
+### Searching by Text file
+<img width="6800" height="11184" alt="image" src="https://github.com/user-attachments/assets/6f1a3d11-2ab9-4568-8f38-a80755010f8d" />
+
+I fed a file named `bulk_targets.txt` with 3 techniques to the tool and it printed out all the information and successfully saved it to the `reports` folder
+
+<img width="340" height="61" alt="image" src="https://github.com/user-attachments/assets/cb30b6f4-7d11-4a49-a5e2-01433fbac5f9" />
+
+### Searching with Custom Directory Option
+Lastly, I tested it the `-o` option with `mitre T1057,T1033 -o incident_alpha_reports` being the command and put my folder name that I wanted and it printed out all the techniques
+
+<img width="5768" height="8428" alt="image" src="https://github.com/user-attachments/assets/539b1b25-7c08-4069-8d82-fb4689d8b88d" />
+
+Below, it created the folder structure that I inputted
+<img width="371" height="47" alt="image" src="https://github.com/user-attachments/assets/3876bc6f-5f2f-400d-b2fe-00d87b738939" />
+
+
