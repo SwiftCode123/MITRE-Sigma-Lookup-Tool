@@ -1,5 +1,5 @@
 ## Post Project Implmentation #3: Handling bulk searches and output
-This implementation allowed the user to type in multiple commands or even input a file and outputs it to a folder with all the files in it. The first change was to allow the user to type a `.txt` file which contained the technique IDs instead of one-by-one inputs
+This implementation allowed the user to type in multiple commands or even input a file which contains one or more technique IDs and then outputs it to a folder with all the files in it. The first change was to allow the user to type a `.txt` file which contained the technique IDs instead of one-by-one inputs
 
 ```python
 parser.add_argument("query", nargs="?", help="A single ATT&CK technique ID or name.")
@@ -10,7 +10,10 @@ parser.add_argument("query", help="ATT&CK technique ID (`T1564`) or technique na
 ```
 But now the `nargs="?"` allows for 0 or 1 argument and allows the user to run the tool without a single query and instead using a text file instead
 
-I then added two more options that the user can type where `-f` allows the user to pass a file path string and `-o` creates a destination target directory folder string defaulting to a folder named `"reports"` if the user doesn't specify one
+I then added two more options that the user can type where `-f` allows the user to pass a file path string and the `-o`, which was redesigned from its original single file behavior, to create a destination target directory folder string defaulting to a folder named `"reports"` if the user doesn't specify one 
+
+It is important to note that in **Post-Project Implementation #2**, the `-o` flag exported output into a single text file. In this enhanced implementation, the same concept was expanded to support bulk processing, where `-o` now points to a directory that stores multiple generated report files
+
 ```python
 parser.add_argument("-f", "--file", help="Path to a text file containing a list of ATT&CK IDs (one per line).")
 parser.add_argument("-o", "--output-dir", default="reports", help="Directory folder where bulk reports will be saved.")
@@ -59,6 +62,8 @@ if output_dir and attack_id:
 ```
 
 Lastly, I made changes to the `main()` function where I made a empty Python array list called `queries` to store the multiple techniques and parse the users multiple argument such as `mitre T1566,T1036`. This code is important because it iterates through the array stack items one by one. If it determines that you are running a bulk operation (more than 1 query or reading from a file), it assigns the `output_folder` target path, going through `generate_single_report()` to cleanly dump organized files into your directory stack. Note that this still works if the user types in a single argument as it did originally
+
+It is important to note that in **Post-Project Implementation #2**, the file saving logic was built into the `main()` class at the very end of the script using a `try/except` block but now that logic was removed from `main()` and placed at the bottom of the `generate_single_report()`, utilizing the pathlib.Path library as seen above
 
 ```python
 def main():
