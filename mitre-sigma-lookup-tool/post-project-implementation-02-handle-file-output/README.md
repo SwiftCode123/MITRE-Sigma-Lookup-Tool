@@ -18,6 +18,6 @@ if args.output:
 - We can see below that I was able to use the `-o credentials_from_password_stores.txt` parameter and then at the bottom it printed `Report successfully saved to: credentials_from_password_stores.txt`
 <img width="5192" height="4948" alt="image" src="https://github.com/user-attachments/assets/45a0bf3c-bc0f-4593-a600-a9258a465237" />
 
-- The `The credentials_from_password_stores.txt` file has been successfully stored on my local computer
+- The `The credentials_from_password_stores.txt` file has been successfully stored on my computer locally
 
 <img width="1144" height="899" alt="image" src="https://github.com/user-attachments/assets/895fb1c7-28ca-4351-86dc-f61cbb99b61c" />
