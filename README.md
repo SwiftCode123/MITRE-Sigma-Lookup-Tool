@@ -81,13 +81,13 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 ## Post Project Ideas
 
 - Alias the program to create a custom command that is accessible anywhere
-	- [Post Project Implementation #1](post-project-implementation-01-alias/README.md)	 
+	- [Post Project Implementation #1](mitre-sigma-lookup-tool/post-project-implementation-01-alias)	 
 - Handle outputting to files
-	- [Post Project Implementation #2](post-project-implementation-02-handle-file-output/README.md) 
+	- [Post Project Implementation #2](mitre-sigma-lookup-tool/post-project-implementation-02-handle-file-output) 
 - Handle bulk searches and outputs
-	- [Post Project Implementation #3](post-project-implementation-03-bulk-search-output/README.md) 
+	- [Post Project Implementation #3](mitre-sigma-lookup-tool/post-project-implementation-03-bulk-search-output) 
 - Integrate another open-source library mapped to MITRE ATT&CK
-	- [Post Project Implementation #4](post-project-implementation-04-atomic-attack-lib/README.md) 
+	- [Post Project Implementation #4](mitre-sigma-lookup-tool/post-project-implementation-04-atomic-attack-li) 
 
 - Use Django to create a web interface
 	- Search bar for searching, rather than command line argument
