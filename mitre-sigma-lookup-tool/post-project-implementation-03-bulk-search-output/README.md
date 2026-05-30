@@ -63,7 +63,7 @@ if output_dir and attack_id:
 
 Lastly, I made changes to the `main()` function where I made a empty Python array list called `queries` to store the multiple techniques and parse the users multiple argument such as `mitre T1566,T1036`. This code is important because it iterates through the array stack items one by one. If it determines that you are running a bulk operation (more than 1 query or reading from a file), it assigns the `output_folder` target path, going through `generate_single_report()` to cleanly dump organized files into your directory stack. Note that this still works if the user types in a single argument as it did originally
 
-It is important to note that in **Post-Project Implementation #2**, the file saving logic was built into the `main()` class at the very end of the script using a `try/except` block but now that logic was removed from `main()` and placed at the bottom of the `generate_single_report()`, utilizing the pathlib.Path library as seen above
+It is important to note that in **Post-Project Implementation #2**, the file saving logic was built into the `main()` class at the very end of the script using a `try/except` block but now that logic was removed from `main()` and placed at the bottom of the `generate_single_report()`, utilizing the `pathlib.Path` library as seen above
 
 ```python
 def main():
