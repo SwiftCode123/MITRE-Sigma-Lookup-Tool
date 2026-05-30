@@ -88,10 +88,8 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 	- [Post Project Implementation #3](mitre-sigma-lookup-tool/post-project-implementation-03-bulk-search-output) 
 - Integrate another open-source library mapped to MITRE ATT&CK
 	- [Post Project Implementation #4](mitre-sigma-lookup-tool/post-project-implementation-04-atomic-attack-lib) 
-
-- Use Django to create a web interface
-	- Search bar for searching, rather than command line argument
-	- Host static site via cloud technology or physical server
+- Use Django to create a web interface (search bar & hosting the site)
+	- [Post Project Implementation #5](mitre-sigma-lookup-tool/post-project-implementation-05-django-web-interface)
 - Improve the speed of Sigma searches 
 	- maybe by applying particular data structures & algorithms
 - Automatically update MITRE and Sigma (which are only accessed locally)
