@@ -1,13 +1,13 @@
 ## Post Project Implmentation #4: Open-source Library - Atomic Red Team
 This implementation required installing the Atomic Red Team library
 
-#### 1. Create a virtual environment and activate it
+### 1. Create a virtual environment and activate it
 ```bash
 python -m venv venv
 source venv/bin/activate
 ```
 
-#### 2. Clone the Atomic Red Team library
+### 2. Clone the Atomic Red Team library
 ```bash
 git clone https://github.com/redcanaryco/atomic-red-team.git
 ```
