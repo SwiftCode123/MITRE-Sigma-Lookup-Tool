@@ -1,5 +1,5 @@
 ## Post Project Implmentation #5: Django web interface setup
-This implementation required creating the Djano project structure and all commands are detailed below
+- This implementation required creating the Djano project structure and all commands are detailed below
 
 ### 1. Create a virtual environment and activate it
 ```bash
