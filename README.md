@@ -91,7 +91,7 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 - Use Django to create a web interface (search bar & hosting the site)
 	- [Post Project Implementation #5](mitre-sigma-lookup-tool/post-project-implementation-05-django-web-interface)
 - Improve the speed of Sigma searches 
-	- maybe by applying particular data structures & algorithms
+	- [Post Project Implementation #6](mitre-sigma-lookup-tool/post-project-implementation-06-sigma-speed-searches)
 - Automatically update MITRE and Sigma (which are only accessed locally)
 - Make searching by name or description “smarter” 
 	- Output all techniques that partially map to description and let user choose
