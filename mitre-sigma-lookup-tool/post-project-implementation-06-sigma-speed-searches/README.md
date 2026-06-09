@@ -37,3 +37,6 @@
   ```
   
 - Together, these changes eliminate repeated disk scans and metadata parsing, significantly reducing the time required to process large numbers of ATTACK techniques against large Sigma rule repositories
+
+## Performance Comparison
+- W.I.P
