@@ -38,5 +38,21 @@
   
 - Together, these changes eliminate repeated disk scans and metadata parsing, significantly reducing the time required to process large numbers of ATTACK techniques against large Sigma rule repositories
 
-## Performance Comparison
-- W.I.P
+## Performance Comparison Table
+- I compared both the scripts (the old code which did not have an inverted index data structure and the new one which did have one). I used Python's `import time` library to see how much time it takes to generate the results. Below are my findings
+
+| ATT&CK IDs | Old Implementation | New Implementation |  |  |
+|-----------:|-------------------:|-------------------:|-------------------:|-------------------:|
+|            | Search Time (s) | Index Build (s) | Query Lookup (s) | Total Search Time (Index Build + Query Lookup) (s) |
+| 5 (Test 1) | 7.1710 | 4.8911 | 0.7852 | 5.6763 |
+| 5 (Test 2) | 7.6973 | 4.8720 | 0.8080 | 5.6799 |
+| 5 (Test 3) | 7.3689 | 4.9268 | 0.8379 | 5.7647 |
+| 10 | 14.2408 | 4.8889 | 1.3753 | 6.2642 |
+| 50 | 65.0105 | 4.9635 | 6.4504 | 11.4139 |
+| 100 | 126.3140 | 4.9363 | 12.9058 | 17.8422 |
+
+- We note that the old implementation's time complexity was `O(N * M)` where for every technique `N`, the program searched for all available files, `M` items. As either grows, the runtime increases rapidly because the same data is repeatedly scanned
+
+- The new approach is split into two phases where it builds the index once, `O(M)` time and then performs the lookup where each query becomes a direct dictionary/hash-table lookup, `O(1)` and for `N` queries it is, `O(N)` and so the total time complexity becomes `O(M + N)`. The old design repeatedly scans the entire dataset for every query `O(N * M)` whereas the new design scans the dataset only once and then performs constant-time lookups `O(M + N)`. This is a trade-off where we spend extra memory to build an index, allowing us to replace repeated expensive searches with very fast lookups
+
+## Performance Comparison Demo
