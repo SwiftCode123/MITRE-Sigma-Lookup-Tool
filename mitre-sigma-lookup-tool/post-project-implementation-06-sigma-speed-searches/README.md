@@ -1,4 +1,4 @@
-## Post Project Implmentation #5: Improving the speed of Sigma searches
+## Post Project Implmentation #6: Improving the speed of Sigma searches
 - This implementation was all about improving the speed of the Sigma searches. Currently, everytime someone searched for an ATT&CK technique such as `T1566`, the program opened every Sigma file, read the file contents, searched for the technique, parsed the YAML/JSON metadata and returned the matches. If someone searched another technique, it repeated this entire process again. Therefore, if we have 10,000 Sigma rules and a 100 ATT&CK techniques to process, this could mean reading 10,000 files 100 times.
 - Therefore, the solution to this is to use an inverted index data structure using a Python dictionary combined with an initialization cache. In general, an Inverted Index maps a search term (the ATT&CK ID) directly to the files that contain it, similar to the index at the back of a textbook
 
