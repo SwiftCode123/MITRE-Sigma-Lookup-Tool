@@ -76,7 +76,9 @@ For example, we can see that one mitigation technique is `Code Signing (M1045)` 
 
 The sigma output shows us ways to detect this attack. In these rules `proc_creation_win_renamed_powershell.yml` and `proc_creation_win_renamed_psexec.yml` monitor Windows event logs to see if a process has been renamed to hide its identity
 
-<img width="5367" height="16384" alt="mitre_name" src="https://github.com/user-attachments/assets/e3ebc8cc-aefc-4253-b852-c2c4aa461d4d" />
+<p align="center">
+  <img width="5367" height="16384" alt="mitre_name" src="https://github.com/user-attachments/assets/e3ebc8cc-aefc-4253-b852-c2c4aa461d4d" />
+</p>
 
 ## Post Project Ideas
 
@@ -93,6 +95,7 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 - Improve the speed of Sigma searches 
 	- [Post Project Implementation #6](mitre-sigma-lookup-tool/post-project-implementation-06-sigma-speed-searches)
 - Automatically update MITRE and Sigma (which are only accessed locally)
+	- [Post Project Implementation #7](mitre-sigma-lookup-tool/post-project-implementation-07-auto-mitre-sigma-updates)
 - Make searching by name or description “smarter” 
 	- Output all techniques that partially map to description and let user choose
 - Interface directly with other professional cybersecurity tools
