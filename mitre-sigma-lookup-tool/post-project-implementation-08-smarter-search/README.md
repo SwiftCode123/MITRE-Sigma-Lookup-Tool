@@ -3,7 +3,18 @@
 
 ## Demo
 
-https://github.com/user-attachments/assets/0133d0b0-2db2-4174-b4f5-eb05675b81a6
+### Search by title
+
+https://github.com/user-attachments/assets/81f779c2-5d7d-4c0c-be8a-7d3bc945219c
+
+### Search by term
+
+https://github.com/user-attachments/assets/babbf445-bc07-45b7-bbf8-e11b3190b4bb
+
+### Search by description
+
+https://github.com/user-attachments/assets/08698bb0-218c-4e12-ae8a-3a82581bfe79
+
 
 
 
