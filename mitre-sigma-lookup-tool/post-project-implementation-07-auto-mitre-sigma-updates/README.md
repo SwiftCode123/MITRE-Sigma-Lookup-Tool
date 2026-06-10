@@ -25,5 +25,5 @@ parser.add_argument("--update", action="store_true", help="Automatically pull la
 
 - In a normal verification process, Python verifies the server certificate, follows the chain through any intermediate certificates, and ultimately checks whether the chain terminates at a trusted root CA in its trust store. If the necessary root certificates are unavailable, Python cannot complete this chain-of-trust validation and rejects the connection
 
-### Example
+### Example Usage
 <img width="1964" height="1108" alt="image" src="https://github.com/user-attachments/assets/173b3ce3-f881-4994-98d0-ebbb66572818" />
