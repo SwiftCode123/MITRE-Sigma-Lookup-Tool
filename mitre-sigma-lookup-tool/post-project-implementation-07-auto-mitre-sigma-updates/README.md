@@ -1,3 +1,5 @@
+## Post Project Implmentation #7: Automatically update MITRE and Sigma 
+- For this implementation, I added support for automatically updating MITRE ATT&CK data and Sigma rules, removing the need to manually download and apply updates
 ### 1. Create a virtual environment and activate it
 ```bash
 python -m venv venv
