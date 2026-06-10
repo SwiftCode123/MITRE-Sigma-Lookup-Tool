@@ -97,7 +97,7 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 - Automatically update MITRE and Sigma (which are only accessed locally)
 	- [Post Project Implementation #7](mitre-sigma-lookup-tool/post-project-implementation-07-auto-mitre-sigma-updates)
 - Make searching by name or description “smarter” 
-	- Output all techniques that partially map to description and let user choose
+	- [Post Project Implementation #8](mitre-sigma-lookup-tool/post-project-implementation-08-smarter-search)
 - Interface directly with other professional cybersecurity tools
 	- MITRE Caldera - Attack platform for launching TTPs in MITRE ATT&CK
 	- Metasploit - Tool for emulating attacker’s TTPs
