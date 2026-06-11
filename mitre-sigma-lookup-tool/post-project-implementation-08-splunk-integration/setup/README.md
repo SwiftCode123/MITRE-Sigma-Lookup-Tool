@@ -45,3 +45,50 @@
 <img width="809" height="604" alt="image" src="https://github.com/user-attachments/assets/b6663947-f59e-421d-83cc-953902d5eb77" />
 </p>
 
+## Install the Ubuntu OS
+- Click on your VM (`1`) and then Console (`2`) and then click on the `Start Now` button (`3`)
+
+<img width="1394" height="536" alt="image" src="https://github.com/user-attachments/assets/eb3aed70-a65c-472c-86db-bc962b0a6132" />
+
+- Click the below option
+
+<p align="center">
+<img width="608" height="336" alt="image" src="https://github.com/user-attachments/assets/d9ff9c76-04d8-46a6-a9b0-c42599c655f6" />
+</p>
+
+- Select your preferred language and keyboard layout (next option)
+
+<p align="center">
+<img width="605" height="379" alt="image" src="https://github.com/user-attachments/assets/d5c624d9-82b1-4ddb-a1df-afc377f38f9d" />
+</p>
+
+- Click the default option (first option)
+<p align="center">
+<img width="605" height="378" alt="image" src="https://github.com/user-attachments/assets/a453db5f-8cc4-4ae8-bd27-a6b1cebdda73" />
+</p>
+
+- It will automatically grab an IP address via DHCP. Write down this IP address as we will use this later
+<p align="center">
+<img width="606" height="377" alt="image" src="https://github.com/user-attachments/assets/6094e337-86d4-47b0-a108-205a9f5b0cc5" />
+</p>
+
+- Click `Use an entire disk`
+<p align="center">
+<img width="617" height="383" alt="image" src="https://github.com/user-attachments/assets/b0ad5547-a2a6-454e-8b2c-240114eb3e56" />
+</p>
+
+- Enter the below information
+<p align="center">
+<img width="574" height="359" alt="image" src="https://github.com/user-attachments/assets/1dd991ac-4b0c-4069-bd33-807a5011e315" />
+</p>
+
+- Click `Install OpenSSH server` and I used this to SSH from my Macbook instead of having to use the Proxmox browser (Note that we also needed the IP address from the previous step). For the next step, just click through the optional featured snaps screen and wait for installation
+<p align="center">
+<img width="574" height="358" alt="image" src="https://github.com/user-attachments/assets/ee594ba4-31a9-42ab-8a0b-51d4e56a35af" />
+</p>
+
+- Wait until this completes and click `Reboot` when finished. Note that if Proxmox asks you to remove the installation medium, just hit enter
+
+<p align="center">
+<img width="573" height="359" alt="image" src="https://github.com/user-attachments/assets/5c463290-fd95-4a41-b074-09e3035232b1" />
+</p>
