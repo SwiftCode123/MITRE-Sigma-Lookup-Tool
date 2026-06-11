@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MITRE ATT&CK & Sigma Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="text-center mb-4">MITRE Sigma Lookup Tool Dashboard</h1>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <form method="GET" action="" class="input-group shadow-sm">
+                    <input type="text" name="q" class="form-control form-control-lg" placeholder="Enter technique ID or keyword (for example: T1566, Phishing)..." value="{{ query }}">
+                    <button type="submit" class="btn btn-primary btn-lg px-4">Analyze</button>
+                </form>
+            </div>
+        </div>
+
+        {% if error %}
+            <div class="alert alert-danger text-center shadow-sm" role="alert">{{ error }}</div>
+        {% endif %}
+
+        {% if technique_found %}
+            <div class="card mb-4 shadow-sm border-start border-primary border-4">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">{{ name }}</h2>
+                    <p class="mb-1"><strong>ATT&CK ID:</strong> <span class="badge bg-secondary">{{ attack_id }}</span></p>
+                    <p class="text-muted small"><strong>STIX Blueprint ID:</strong> {{ stix_id }}</p>
+                    <hr>
+                    <h5>Description</h5>
+                    <p class="card-text" style="white-space: pre-line;">{{ description }}</p>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-dark text-white fw-bold">Mitigations Matrix</div>
+                <div class="card-body p-0">
+                    <table class="table table-hover table-striped mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Mitigation Action Item</th>
+                                <th>System Identifier Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for m in mitigations %}
+                            <tr>
+                                <td><strong>{{ m.name }}</strong></td>
+                                <td>{{ m.id }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr><td colspan="2" class="text-muted text-center p-3">No mitigation actions mapped.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-dark text-white fw-bold">Active Sigma Detections Matching Engine</div>
+                <div class="card-body p-0">
+                    <table class="table table-hover table-striped mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Rule Target Profile Header</th>
+                                <th>Source Path Directory Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for match in sigma_matches %}
+                            <tr>
+                                <td><span class="text-success fw-bold">{{ match.title }}</span></td>
+                                <td class="text-muted font-monospace small">{{ match.file }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr><td colspan="2" class="text-muted text-center p-3">No matching production detection playbooks caught.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-dark text-white fw-bold">Atomic Red Team Simulations</div>
+                <div class="card-body p-0">
+                    <table class="table table-hover table-striped mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Scenario Test Vector</th>
+                                <th>Operating Targets</th>
+                                <th>Executor Interface</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for test in atomic_tests %}
+                            <tr>
+                                <td class="text-info-emphasis fw-semibold">{{ test.name }}</td>
+                                <td>
+                                    {% for plat in test.supported_platforms %}
+                                        <span class="badge bg-info text-dark">{{ plat }}</span>
+                                    {% endfor %}
+                                </td>
+                                <td><mark class="font-monospace small">{{ test.executor.name }}</mark></td>
+                            </tr>
+                            {% empty %}
+                            <tr><td colspan="3" class="text-muted text-center p-3">No simulation playbooks found.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
