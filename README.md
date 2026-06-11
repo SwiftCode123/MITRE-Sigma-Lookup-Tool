@@ -76,7 +76,9 @@ For example, we can see that one mitigation technique is `Code Signing (M1045)` 
 
 The sigma output shows us ways to detect this attack. In these rules `proc_creation_win_renamed_powershell.yml` and `proc_creation_win_renamed_psexec.yml` monitor Windows event logs to see if a process has been renamed to hide its identity
 
-<img width="5367" height="16384" alt="mitre_name" src="https://github.com/user-attachments/assets/e3ebc8cc-aefc-4253-b852-c2c4aa461d4d" />
+<p align="center">
+  <img width="5367" height="16384" alt="mitre_name" src="https://github.com/user-attachments/assets/e3ebc8cc-aefc-4253-b852-c2c4aa461d4d" />
+</p>
 
 ## Post Project Ideas
 
@@ -91,10 +93,11 @@ The sigma output shows us ways to detect this attack. In these rules `proc_creat
 - Use Django to create a web interface (search bar & hosting the site)
 	- [Post Project Implementation #5](mitre-sigma-lookup-tool/post-project-implementation-05-django-web-interface)
 - Improve the speed of Sigma searches 
-	- maybe by applying particular data structures & algorithms
+	- [Post Project Implementation #6](mitre-sigma-lookup-tool/post-project-implementation-06-sigma-speed-searches)
 - Automatically update MITRE and Sigma (which are only accessed locally)
+	- [Post Project Implementation #7](mitre-sigma-lookup-tool/post-project-implementation-07-auto-mitre-sigma-updates)
 - Make searching by name or description “smarter” 
-	- Output all techniques that partially map to description and let user choose
+	- [Post Project Implementation #8](mitre-sigma-lookup-tool/post-project-implementation-08-smarter-search)
 - Interface directly with other professional cybersecurity tools
 	- MITRE Caldera - Attack platform for launching TTPs in MITRE ATT&CK
 	- Metasploit - Tool for emulating attacker’s TTPs
