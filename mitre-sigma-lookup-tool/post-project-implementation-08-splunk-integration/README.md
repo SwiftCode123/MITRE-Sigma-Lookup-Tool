@@ -1,1 +1,2 @@
-
+# Post Project Implmentation #9: Splunk Integration
+- For this implementation, I integrated the project with Splunk SIEM to automatically convert open-source Sigma detection rules into native Splunk searches using `PySigma`. I then used the Splunk SDK to deploy these rules directly to a remote Splunk instance as active detection alerts
