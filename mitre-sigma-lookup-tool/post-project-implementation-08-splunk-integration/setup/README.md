@@ -92,3 +92,9 @@
 <p align="center">
 <img width="573" height="359" alt="image" src="https://github.com/user-attachments/assets/5c463290-fd95-4a41-b074-09e3035232b1" />
 </p>
+
+## Verify the Remote Connection
+- Once the VM boots back up, I used my terminal on my Macbook to SSH directly into the VM and was successfully able to login
+```bash
+ssh username_goes_here@<VM_IP_ADDRESS_GOES_HERE>
+```
