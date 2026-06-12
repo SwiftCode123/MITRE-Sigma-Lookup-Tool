@@ -98,3 +98,34 @@
 ```bash
 ssh username_goes_here@<VM_IP_ADDRESS_GOES_HERE>
 ```
+## Splunk Enterprise SIEM engine setup
+- Now that we are done with the Ubuntu installation and were able to SSH inside the VM, we now need to install and configure the Splunk Enterprise SIEM engine
+
+### 1. Install `wget`
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install wget -y
+```
+- This was to ensure packet manager was up to date and that we have `wget` installed so we can pull down the installer package. I ran this inside my Proxmox VM SSH session
+
+### 2. Download the Splunk Enterprise Package
+```bash
+wget -O splunk-10.4.0-f798d4d49089-linux-amd64.deb "https://download.splunk.com/products/splunk/releases/10.4.0/linux/splunk-10.4.0-f798d4d49089-linux-amd64.deb"
+```
+### 3. Install the package
+```bash
+sudo dpkg -i splunk-10.4.0-f798d4d49089-linux-amd64.deb
+```
+
+### 4. Start the SIEM Engine
+```bash
+sudo /opt/splunk/bin/splunk start --accept-license --run-as-root
+```
+- After these steps, enter your administrator username and password. Once this is done, the SIEM will be live. Note that it will give you a link to go to
+
+<img width="1508" height="852" alt="image" src="https://github.com/user-attachments/assets/2a5a8aae-7cac-4cf4-9bae-64c313e6ab11" />
+
+- Enter your administrator username and password that you just created and BOOM, we are in!
+- We have finally completed the whole setup process and look at that clean dashboard :D
+
+<img width="1512" height="864" alt="image" src="https://github.com/user-attachments/assets/24c14d76-b78d-4f31-ae9f-721233722b5f" />
