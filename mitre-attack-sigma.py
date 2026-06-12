@@ -22,6 +22,7 @@ from sigma.backends.splunk import SplunkBackend
 
 # Initialize environmental configs immediately
 load_dotenv()
+# test
 
 # Terminal object that captures ("records") and stores all printed text, colors, and styling
 console = Console(record=True)
