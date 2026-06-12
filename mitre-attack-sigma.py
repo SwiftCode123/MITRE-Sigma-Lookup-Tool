@@ -13,6 +13,16 @@ from rich.console import Console
 from rich.table import Table
 from rich.markdown import Markdown
 
+# library for Splunk and Sigma
+import os
+from dotenv import load_dotenv
+import splunklib.client as client
+from sigma.rule import SigmaRule
+from sigma.backends.splunk import SplunkBackend
+
+# Initialize environmental configs immediately
+load_dotenv()
+
 # Terminal object that captures ("records") and stores all printed text, colors, and styling
 console = Console(record=True)
 
