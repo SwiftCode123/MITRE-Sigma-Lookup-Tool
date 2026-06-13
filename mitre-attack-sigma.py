@@ -20,6 +20,10 @@ import splunklib.client as client
 from sigma.rule import SigmaRule
 from sigma.backends.splunk import SplunkBackend
 
+import urllib.request
+# From the GitPython library
+import git  
+
 # Initialize environmental configs immediately
 load_dotenv()
 
@@ -171,6 +175,112 @@ def build_sigma_index(sigma_root: Path):
                     SIGMA_INDEX[attack_id] = []
                 SIGMA_INDEX[attack_id].append(match_entry)
 """
+    Translates the Sigma YAML rule into Splunk SPL and deploys it 
+    to the remote Proxmox Splunk VM instance as a Saved Search
+"""
+def deploy_to_splunk(sigma_rule_path, rule_title):
+    try:
+        # Extracts the file name
+        # Example: test.yml or .yaml
+        console.print(f"[*] Translating Sigma rule: [dim]{os.path.basename(sigma_rule_path)}[/dim]...")
+        
+        # Read the YAML file
+        """
+        Example:
+        title: Suspicious PowerShell
+        logsource:
+            product: windows
+        detection:
+            selection:
+                Image: '*powershell.exe'
+        """
+        with open(sigma_rule_path, "r", encoding="utf-8") as f:
+            rule_yaml = f.read()
+            
+        # Converts the raw YAML text into a Sigma object
+        rule = SigmaRule.from_yaml(rule_yaml)
+        backend = SplunkBackend()
+        
+        # Convert the rule mapping into a raw Splunk query string
+        """
+        Example:
+        Image: '*powershell.exe'
+        turns into
+        Image="*powershell.exe"
+        """
+        spl_queries = backend.convert_rule(rule)
+        if not spl_queries:
+            console.print("[red] Failed to translate rule logic into Splunk SPL.[/red]")
+            return False
+            
+        # Some Sigma rules can generate multiple Splunk queries
+        # This takes the first one
+        splunk_spl = spl_queries[0]
+        console.print(f"[green] Successfully compiled SPL:[/green] [cyan]{splunk_spl}[/cyan]")
+
+    except Exception as e:
+        console.print(f"[red] Error during Sigma translation: {e}[/red]")
+        return False
+
+    # Gets the host, port and loads the login credentials
+    try:
+        host = os.getenv("SPLUNK_HOST")
+        port = int(os.getenv("SPLUNK_PORT", 8089))
+        user = os.getenv("SPLUNK_USER")
+        password = os.getenv("SPLUNK_PASSWORD")
+
+        if not all([host, user, password]):
+            console.print("[red] Missing Splunk credentials in your .env file.[/red]")
+            return False
+
+        console.print(f"[*] Connecting to Splunk management API at [bold]{host}:{port}[/bold]...")
+        
+        # Establish an authenticated API session
+        service = client.connect(
+            host=host,
+            port=port,
+            username=user,
+            password=password,
+            autologin=True,
+            verify=False
+        )
+
+        # Create the Saved Search Alert inside Splunk
+        # Example: rule_title = "Suspicious PowerShell"
+        # becomes SIGMA - Suspicious PowerShell
+        clean_title = f"SIGMA - {rule_title}"
+        
+        # Check if the alert already exists to prevent duplication
+        # If it exists, update the Splunk saved search with SPL generated from the YAML
+        # Note: If the YAML does not change, the SPL remains the same
+        # If it does not exist, create a new Splunk saved search
+        if clean_title in service.saved_searches:
+            console.print(f"[yellow] Alert '{clean_title}' already exists. Updating query logic...[/yellow]")
+            service.saved_searches[clean_title].update(search=splunk_spl)
+        else:
+            console.print(f"[*] Creating live correlation search rule: [magenta]{clean_title}[/magenta]...")
+            service.saved_searches.create(
+                name=clean_title,
+                search=splunk_spl,
+                **{
+                    "is_scheduled": 1, # Runs automatically instead of the user clicking "Run Search"               
+                    "cron_schedule": "*/5 * * * *", # Runs every 5 minutes   
+                    "alert_type": "number of events",
+                    "alert.comparator": "greater than",
+                    "alert.threshold": 0,             
+                    "alert.suppress": 0,
+                    "ui.display_apps": "search"        
+                }
+            )
+            
+        console.print(f"[bold green] SUCCESS: Rule deployed live to Proxmox Splunk VM. Check your dashboard [/bold green]")
+        return True
+
+    except Exception as e:
+        console.print(f"[red] Connection/Deployment failed: {e}[/red]")
+        return False
+
+"""
 This function generates a full cybersecurity technique report: 
 It finds a MITRE ATT&CK technique from a query, retrieves its mitigations, 
 searches for matching Sigma rules, pulls related Atomic Red Team tests, 
@@ -209,6 +319,31 @@ def generate_single_report(mitre, sigma_root, query, atomics_root, output_dir=No
     matches = lookup_sigma_in_index(attack_id) if attack_id else []
     print_sigma_matches(matches)
     
+    # User choose and deploys the matches sigma rules to Splunk 
+    if matches:
+        console.print(f"\n[bold yellow] Operational SIEM action available for {attack_id}[/bold yellow]")
+        deploy_choice = input("Would you like to deploy any of these matched detection rules to your Splunk VM? (y/N): ").strip().lower()
+        
+        if deploy_choice == 'y':
+            # If there's only one match, just deploy it instantly
+            if len(matches) == 1:
+                deploy_to_splunk(matches[0]["file"], matches[0]["title"])
+            else:
+                # If there are multiple rules found for this technique, let the user choose which one to push
+                console.print("\n[yellow]Select which specific Sigma rule to push live to Proxmox:[/yellow]")
+                for idx, match in enumerate(matches, 1):
+                    console.print(f"  [{idx}] {match['title']}")
+                
+                try:
+                    rule_choice = input(f"\nEnter selection (1-{len(matches)}): ").strip()
+                    rule_idx = int(rule_choice) - 1
+                    if 0 <= rule_idx < len(matches):
+                        deploy_to_splunk(matches[rule_idx]["file"], matches[rule_idx]["title"])
+                    else:
+                        print("Invalid selection number. Skipping deployment.")
+                except ValueError:
+                    print("Invalid input. Skipping deployment.")
+        
     console.record = False
     console.print("\n[bold]Fetching simulation tests from Atomic Red Team...[/bold]")
     console.record = True
@@ -460,10 +595,6 @@ def print_sigma_matches(matches):
         table.add_row(str(m.get("title")), str(m.get("file")), str(m.get("tags")))
     
     console.print(table)
-
-import urllib.request
-# From the GitPython library
-import git  
 
 def run_auto_updates(stix_path: str, sigma_path: str):
     """
